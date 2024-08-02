@@ -1,0 +1,322 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/butterup.min.css' %}">
+{% endblock css %}
+{% block title %}Profile{% endblock title %}
+
+{% block navbar %}
+
+<nav class="navbar navbar-expand-lg navbar-dark w-100" id="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class="rounded-pill" src="{% static 'media/logo.jpeg' %}" width="50"
+                height="50" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Products
+                    </a>
+                    <ul class="dropdown-menu" style="left: 4px;">
+                        <li><a class="dropdown-item" href="./analyzer.html">Patient</a></li>
+                        <li><a class="dropdown-item" href="./doctor-basic-dash.html">Doctor</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Contact</a>
+                </li>
+            </ul>
+            <div class="d-flex">
+                <a href="#" class="btn btn-light rounded-pill me-2" style="font-size: medium; font-weight: 600;">Book a
+                    Demo</a>
+                <div class="dropdown">
+                    <button class="btn btn-light rounded-pill padd" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person" viewBox="0 0 16 16">
+                            <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">My profile</a></li>
+                        <li><a class="dropdown-item" href="#">Help</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+{% endblock navbar %}
+{% block content %}
+
+<main class="container">
+    <div class="row mt-4">
+        <div class="col-lg-3">
+            <div class="card" style="width: 100%; position: sticky; top: 10px;">
+                <div class="card-body text-center">
+                    <div class="mb-2">
+                        <img id="profile-pic" src="{% static 'media/logo.jpeg' %}" class="rounded-pill" alt="profile"
+                            width="200" height="200" style="object-fit: cover;">
+                    </div>
+                    <h5 class="card-title" id="name"></h5>
+                    <h6 class="card-subtitle mb-2 text-muted" id="class"></h6>
+                    <p id="bio"></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-9">
+            <div class="card" style="width: 100%">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="mb-4">
+                                <h5>Edit Profile</h5>
+
+                            </div>
+                            <div class="container-fluid">
+                                <form id="updateuser-profile">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="row">
+
+
+                                                <div class="col-lg-6">
+
+                                                    <label for="firstname" class="form-label">First Name</label>
+                                                    <input type="text" class="form-control" id="firstname"
+                                                        name="first_name" aria-describedby="emailHelp">
+
+
+                                                </div>
+                                                <div class="col-lg-6">
+
+
+                                                    <label for="lastname" class="form-label">Last Name</label>
+                                                    <input type="text" class="form-control" id="lastname"
+                                                        name="last_name" aria-describedby="emailHelp">
+
+
+                                                </div>
+
+                                                <div class="col-lg-12 mt-3">
+
+
+                                                    <label for="upemail" class="form-label">Email</label>
+                                                    <input type="email" class="form-control" id="upemail" name="email"
+                                                        aria-describedby="emailHelp">
+
+                                                </div>
+                                                <div class="col-lg-12 mt-3">
+
+
+                                                    <label for="upbio" class="form-label">Your
+                                                        Bio</label>
+                                                    <textarea class="form-control" id="upbio" name="bio"
+                                                        rows="3"></textarea>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 pt-4">
+                                            <div class="mb-3 text-center">
+                                                <img id="profile-pic-upload" src="{% static 'media/logo.jpeg' %}"
+                                                    width="200" height="200" alt="up-img" class="rounded-pill"
+                                                    style="object-fit: cover;">
+                                            </div>
+                                            <input type="file" class="form-control" id="image" name="profile">
+
+                                        </div>
+
+                                    </div>
+                                    <button class="btn btn-dark mt-3" type="submit">Submit</button>
+
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-4" style="width: 100%">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="mb-4">
+                                <h5>Change Password</h5>
+
+                            </div>
+                            <div class="container-fluid">
+                                <form id="chng-pass">
+
+                                    <div class="mb-3 w-50">
+                                        <label for="pass1" class="form-label">New
+                                            Password</label>
+                                        <input type="password" class="form-control" id="pass1" name="new_password"
+                                          >
+
+                                    </div>
+
+
+
+                                    <div class="mb-3 w-50">
+                                        <label for="exampleInputEmail1" class="form-label">Confirm
+                                            Password</label>
+                                        <input type="password" class="form-control" id="exampleInputEmail1" name="confirm_password">
+
+                                    </div>
+                                    <button class="btn btn-dark mt-3" type="submit">Change Password</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-4" style="width: 100%">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="mb-4">
+                                <h5>Explore Resultes</h5>
+
+                            </div>
+                            <div class="container-fluid">
+                                <div class="row row-cols-1 row-cols-md-3 g-4">
+                                    <div class="col">
+                                        <div class="card">
+                                            <img src="./media/logo.jpeg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card title</h5>
+                                                <p class="card-text">This is a longer card with supporting text
+                                                    below as a natural lead-in to additional content. This content
+                                                    is a little bit longer.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                            <img src="./media/logo.jpeg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card title</h5>
+                                                <p class="card-text">This is a longer card with supporting text
+                                                    below as a natural lead-in to additional content. This content
+                                                    is a little bit longer.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                            <img src="./media/logo.jpeg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card title</h5>
+                                                <p class="card-text">This is a longer card with supporting text
+                                                    below as a natural lead-in to additional content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex justify-content-center align-item center w-100 mt-4">
+                                    <nav aria-label="Page navigation example m-auto">
+                                        <ul class="pagination">
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+{% endblock content %}
+
+{% block footer %}
+
+<footer class="row py-5 my-5 ps-5 border-top container-fluid">
+    <div class="col-lg-3 mb-3">
+        <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+            <img src="./media/logo.png" alt="">
+        </a>
+        <p class="text-light">© 2023 by BackupDoc.</p>
+        <p class="text-light">All Right Reserved <a href="">Privacy and terms</a></p>
+    </div>
+    <div class="col-lg-3 mb-3">
+        <h5 class="text-light" style="font-weight: 900;">AI Based treatment prediction platform</h5>
+        <p class="text-light " style="font-family: sans-serif; font-size: small;">
+
+            Address
+            Backupdoc
+            Af 30 Aditya City center
+            ghaziabad
+        </p>
+    </div>
+
+    <div class="col-lg-4 mb-3">
+        <h5 class="text-light" style="font-weight: 900;">Be in the know</h5>
+        <p class="text-light " style="font-family: sans-serif; font-size: small;">
+
+            Founded in 2023, BackupDoc is a pioneer in digital dental diagnostics. With a mission to democratize
+            health diagnoses and enhance transparency, our platform has already served thousands of satisfied
+            users, making dental diagnostics accessible and comprehensible for all. Join us on our journey to
+            reshape the future of dental care, one radiograph at a time.
+        </p>
+    </div>
+
+
+    <div class="col-lg-1 mb-3">
+        <h5 class="text-light" style="font-weight: 900;">Menu</h5>
+        <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Features</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Pricing</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">FAQs</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">About</a></li>
+        </ul>
+    </div>
+</footer>
+{% endblock footer %}
+
+{% block scripts %}
+<script src="{% static 'js/worker.js' %}"></script>
+<script src="{% static 'js/apps.js' %}"></script>
+<script src="{% static 'js/butterup.min.js' %}"></script>
+{% endblock scripts %}

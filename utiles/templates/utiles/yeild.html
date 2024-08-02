@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Css linkage -->
+    <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-utilities.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        input[type="checkbox"] {
+            visibility: hidden;
+        }
+
+        input[type="checkbox"]:checked+label {
+            background-color: #595857;
+        }
+
+        input[type="checkbox"]:checked+label:before {
+            transform: translateX(20px);
+            background-color: #FFF;
+        }
+
+        label {
+            display: block;
+            width: 50px;
+            height: 30px;
+            border: 2px solid white;
+            border-radius: 99em;
+            position: relative;
+            transition: background-color 0.55s ease-in-out;
+            cursor: pointer;
+        }
+
+        label:before {
+            transition: transform 0.55s ease, background-color 0.55s ease;
+            transition-delay: 0.3s;
+            content: "";
+            display: block;
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            background-color: #fffefc;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+        }
+    </style>
+    <title>Home</title>
+</head>
+
+<body style="background-color: #03193E;">
+    <div id="spinner" class="lds-dual-ring"></div>
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-dark w-100" id="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img class="rounded-pill" src="./media/logo.jpeg" width="50"
+                        height="50" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Products
+                            </a>
+                            <ul class="dropdown-menu" style="left: 4px;">
+                                <li><a class="dropdown-item" href="./analyzer.html">Patient</a></li>
+                                <li><a class="dropdown-item" href="./doctor-basic-dash.html">Doctor</a></li>
+                                
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <a href="#" class="btn btn-light rounded-pill me-2"
+                            style="font-size: medium; font-weight: 600;">Book a Demo</a>
+                        <div class="dropdown">
+                            <button class="btn btn-light rounded-pill padd" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-person" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                                </svg>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">My profile</a></li>
+                                <li><a class="dropdown-item" href="#">Help</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="mvh">
+            <div class="container p-4">
+                <div class="row w-100" style="min-height: 500px;">
+                    <div class="col-lg-7 m-2 rounded-2 pre-i" style="background-color: #03193E;">
+                        <div class="text-center" style="margin-top: 100px;">
+
+                            <p class="text-light info-text">Your Analyzed results</p>
+
+                        </div>
+                        <div class="progress-bar" id="progressBar">
+                            <div class="progress" id="progress"></div>
+                        </div>
+                        <div id="previewContainer" style="width: 100%; height: 100%;"></div>
+                    </div>
+                    <div class="col-lg-4 m-2 rounded-2" style="background-color: #03193E;">
+                        <div class="w-100 h-100">
+                            <div class="mt-4">
+                                <h3 class="text-light mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="40"
+                                        height="40" style="margin-right: 10px;" fill="yellow"
+                                        class="bi bi-emoji-smile-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5M4.285 9.567a.5.5 0 0 1 .683.183A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683M10 8c-.552 0-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5S10.552 8 10 8" />
+                                    </svg>Great</h3>
+                            </div>
+                            <div class="mt-4 ">
+                                <h4 class="text-light mt-2 mb-3">Want Camparison?</h4>
+                                <div class="mt-3">
+                                    <div>
+                                        <input type="checkbox" id="toggle" />
+                                        <label for="toggle"></label>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                                            class="bi bi-info-circle" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                            <path
+                                                d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                                        </svg></span> <span class="text-light pt-2">To compare the original and analyzed
+                                        X-ray images, please click the toggle button.</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 mb-2">
+                                <h4 class="text-light ">Want Camparison?</h4>
+                            </div>
+                            <button class="btn btn-light rounded pill mt-3">Get analyzed result</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="row py-5 my-5 ps-5 border-top container-fluid">
+            <div class="col-lg-3 mb-3">
+                <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+                    <img src="./media/logo.png" alt="">
+                </a>
+                <p class="text-light">© 2023 by BackupDoc.</p>
+                <p class="text-light">All Right Reserved <a href="">Privacy and terms</a></p>
+            </div>
+            <div class="col-lg-3 mb-3">
+                <h5 class="text-light" style="font-weight: 900;">AI Based treatment prediction platform</h5>
+                <p class="text-light " style="font-family: sans-serif; font-size: small;">
+
+                    Address
+                    Backupdoc
+                    Af 30 Aditya City center
+                    ghaziabad
+                </p>
+            </div>
+
+            <div class="col-lg-4 mb-3">
+                <h5 class="text-light" style="font-weight: 900;">Be in the know</h5>
+                <p class="text-light " style="font-family: sans-serif; font-size: small;">
+
+                    Founded in 2023, BackupDoc is a pioneer in digital dental diagnostics. With a mission to democratize
+                    health diagnoses and enhance transparency, our platform has already served thousands of satisfied
+                    users, making dental diagnostics accessible and comprehensible for all. Join us on our journey to
+                    reshape the future of dental care, one radiograph at a time.
+                </p>
+            </div>
+
+
+            <div class="col-lg-1 mb-3">
+                <h5 class="text-light" style="font-weight: 900;">Menu</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">About</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    <script src="./js/worker.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            // Hide the loader
+            document.getElementById('spinner').style.display = 'none';
+            // Show the content
+            document.getElementById('content').style.display = 'block';
+            // Initialize AOS
+            AOS.init({
+                offset: 120,
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

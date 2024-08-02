@@ -1,0 +1,321 @@
+@font-face {
+    font-family: Baloo2;
+    src: url(../font/BalooBhai2-SemiBold.ttf);
+}
+
+/* Sipinner */
+/* Loader styles */
+#spinner {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #03193E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Loader animation styles */
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-dual-ring::after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hide content initially */
+#content {
+    display: none;
+}
+
+/* Sipinner */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar-scrolled {
+    background-color: #03193E !important;
+}
+
+.padd {
+    padding-top: 0.2rem;
+    padding-bottom: 0.38rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+}
+
+.dropdown-menu[data-bs-popper] {
+    top: 100%;
+    left: -153px;
+    right: 0px;
+}
+
+
+.main-cover {
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.content {
+    z-index: 20;
+    color: white;
+}
+
+.z-up {
+    z-index: 150;
+    position: relative;
+}
+
+.cus-f {
+    font-weight: 900;
+    font-size: 2.5em;
+    font-family: Baloo2;
+}
+
+.fs-p {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.w-p {
+    width: 100%;
+
+}
+
+#comp-lns73fzv {
+    transform: rotate(180deg);
+}
+
+.context-box {
+    background: linear-gradient(to right, #002871, #01316d);
+    color: white;
+    border-radius: 10px;
+
+}
+
+.under-line {
+    background-color: white;
+    width: 14%;
+    height: 3px;
+    margin: 0 auto;
+}
+
+
+.up-btn {
+    background-color: #f6eef9;
+    padding: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #680198;
+    font-weight: 900;
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.up-btn:hover {
+
+    background-color: #f3daff;
+
+}
+
+.up-btn-outline {
+    transition: all .3s ease-in-out;
+    background-color: transparent;
+    padding: 9px;
+    border: 2px solid #f6eef9;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: white;
+    font-weight: 900;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.up-btn-outline:hover {
+    background-color: #f6eef9;
+    color: #680198;
+}
+
+
+/* Aanalyzer html */
+
+.mvh {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.upload-container {
+    width: 300px;
+    text-align: center;
+}
+
+.drag-drop-area {
+    border: 4px dashed white;
+    padding: 20px;
+    cursor: pointer;
+
+    /* transition: background-color 0.3s; */
+    margin-top: 80px;
+    min-height: 200px;
+}
+
+.drag-drop-area:hover {
+    background-color: #032357;
+}
+
+.drag-drop-area p {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+}
+
+.drag-drop-area input[type="file"] {
+    display: none;
+}
+
+#previewContainer img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px;
+    display: none;
+    /* Hidden initially */
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, #025afd, #01316d);
+    transition: width 0.3s;
+}
+
+
+.info-text {
+    margin-top: 20px;
+    font-family: Baloo2;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.info-tem-sm {
+    font-family: Baloo2;
+    font-weight: 600;
+    font-size: 0.8em;
+}
+
+/* Doctor baisc dashboard */
+.side-bar-link-h {
+    color: rgb(186, 186, 186);
+    text-decoration: none;
+    font-size: 0.9em;
+    font-family: Baloo2;
+}
+
+.divider {
+    background-color: white;
+    width: 100%;
+    height: 3px;
+}
+
+hr {
+    margin-top: 0.8px;
+    margin-bottom: 0.9px;
+}
+
+/* About us page */
+.about-content {
+    padding-top: 150px;
+    color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    font-family: Baloo2;
+}
+
+/* auth pages */
+h1,
+h5,
+label,
+button,
+span {
+    font-family: Baloo2;
+}
+
+p {
+    font-family: Baloo2 Arial, Helvetica, sans-serif;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.separator .line {
+    flex: 1;
+    border: none;
+    border-top: 1px solid #000;
+    margin: 0 10px;
+}
+
+.separator span {
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+/* Ensure the main container has relative positioning */
+.pre-i {
+    position: relative; /* Ensure this is set */
+}
+
+/* Reset button styles */
+#resetButton {
+    position: absolute; /* Positioned relative to .pre-i */
+    top: 40px; /* Adjust as needed */
+    right: 40px; /* Adjust as needed */
+    z-index: 100; /* Ensure it’s above other content */
+    display: none; /* Initially hidden */
+}
+
+/* Image in preview container */
+#previewContainer img {
+    position: relative; /* To respect z-index */
+    top: -10px; /* Adjust as needed */
+    z-index: 50; /* Ensure it’s below the reset button */
+}

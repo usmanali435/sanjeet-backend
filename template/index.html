@@ -1,0 +1,429 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/camp-slider.css' %}">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+{% endblock css %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-dark w-100 " id="navbar" style="position: fixed; z-index: 200;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class="rounded-pill" src="{% static 'media/logo.jpeg' %}" width="50"
+                height="50" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Products
+                    </a>
+                    <ul class="dropdown-menu" style="left: 4px;">
+                        <li><a class="dropdown-item" href="/bud-apps/uploader/">Patient</a></li>
+                        <li><a class="dropdown-item" href="/bud-apps/dashboard-doctor/">Doctor</a></li>
+                        
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link active" href="#">Blog</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Contact</a></li>
+            </ul>
+            <div class="d-flex">
+                <a href="#" class="btn btn-light rounded-pill me-2"
+                    style="font-size: medium; font-weight: 600;">Book a Demo</a>
+                <div class="dropdown">
+                    <button class="btn btn-light rounded-pill padd" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person" viewBox="0 0 16 16">
+                            <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/bud-apps/myprofile/">My profile</a></li>
+                        <li><a class="dropdown-item" href="#">Help</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+{% endblock navbar %}
+
+
+{% block content %}
+<main class="bg-prof" style="height: 100vh;">
+    <div class="main-cover">
+        <div class="content z-up" style="padding-top: 180px;">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="w-p">
+                            <h2 style="color: #F0D1FF;">Unsure About Your Dental Diagnosis?
+                            </h2>
+                            <h2 class="fs-p">Get a </h2>
+                            <h2 class="fs-p">Second Opinion </h2>
+                        </div>
+                        <div class=" mt-3 mb-3 w-p">
+                            <p style="color: #F0D1FF;">Upload Your Dental X-rays and Receive Expert AI-Driven
+                                Insights in
+                                Minutes</p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <a href="/bud-apps/uploader/" class="up-btn d-block rounded-pill w-100"
+                                    style="text-align: center;">Upload
+                                    <span class="ms-3 mb-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            fill="currentColor" class="bi bi-box-arrow-in-up"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1z" />
+                                            <path fill-rule="evenodd"
+                                                d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708z" />
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="col-lg-4">
+                                <a class=" up-btn-outline d-block rounded-pill w-100"
+                                    style="text-align: center;">How this work?
+
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class=" mt-5 mb-3 w-p">
+                            <p style="color: #F0D1FF; "> <b>Sucessfully provided second opinions to 2000+
+                                    clients</b><br>
+                                Don't leave your dental health to chance. BackupDoc.ai uses advanced Al
+                                technology
+                                to review
+                                your X-rays and provide a second opinion. Ensure you get the best care possible
+                                without any
+                                doubts</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="image-comparison">
+                            <div class="images-container">
+                                <img class="before-image" src="{% static 'media/data-2.jpeg' %}" alt="" />
+                                <img class="after-image" src="{% static 'media/data-1.jpeg' %}" alt="" />
+
+                                <div class="slider-line"></div>
+                                <div class="slider-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                                    </svg>
+                                </div>
+
+                                <input type="range" class="slider" min="0" max="100" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<section>
+    <div class="container pt-3 pb-3">
+        <div class="text-center cus-f mt-4 mb-5">
+
+            <h1 class="text-light">Services</h1>
+            <div class="under-line"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 mb-2 col-md-6" data-aos="fade-up" data-aos-delay="50" data-aos-duration="4000">
+                <div class="context-box w-100 h-100 p-3">
+
+                    <p class="fs-i" style="font-family: sans-serif;">
+
+
+                        Our advanced Shanker AI system processes your radiographs.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-2 col-md-6" data-aos="fade-up" data-aos-delay="100"
+                data-aos-duration="4000">
+                <div class="context-box w-100 h-100 p-3">
+                    <p class="fs-i" style="font-family: sans-serif;">
+                        Accurate Assessments:
+                        Leveraging the power of cutting-edge technology for precise and reliable diagnostics.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-2 col-md-6" data-aos="fade-up" data-aos-delay="150"
+                data-aos-duration="4000">
+                <div class="p-3 context-box w-100 h-100">
+                    <p class="fs-i" style="font-family: sans-serif;">
+
+                        Data Privacy:
+                        We understand the importance of your personal data. BackupDoc ensures end-to-end
+                        encryption,
+                        keeping your radiographs and results confidential.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-2 col-md-6" data-aos="fade-up" data-aos-delay="200"
+                data-aos-duration="4000">
+                <div class="p-3 context-box w-100 h-100">
+                    <p class="fs-i" style="font-family: sans-serif;">
+                        Easy-to-Understand Reports:
+                        No medical jargon! Receive a clear, color-coded visual report that's easy to interpret.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container pt-4 pb-3">
+        <div class="text-center cus-f mt-5 mb-5">
+
+            <h1 class="text-light">Features</h1>
+            <div class="under-line"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-2 text-center " data-aos="flip-right" data-aos-duration="1000">
+                <div class="context-box p-2 rounded-2 mb-2" style="min-height: 260px;">
+                    <div class="mb-3 ">
+                        <img src="{% static 'media/logo.jpeg' %}" class="rounded-pill" alt="info1" width="50" height="50">
+
+                    </div>
+                    <div class="p-2">
+                        <h6 style="font-weight: 900;">Diagnostic Challanges</h6>
+                        <p style="font-size: smaller;">Skilled dentists can miss subtle details in radiograph.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 text-center " data-aos="flip-right" data-aos-duration="1000">
+                <div class="context-box p-2 rounded-2 mb-2" style="min-height: 260px;">
+                    <div class="mb-3 ">
+                        <img src="media/logo.jpeg" class="rounded-pill" alt="info1" width="50" height="50">
+
+                    </div>
+                    <div class="p-2">
+                        <h6 style="font-weight: 900;">Patient Education Gap</h6>
+                        <p style="font-size: smaller;">Patients struggle to understand dental issues and
+                            struggle to
+                            trust traditional radiographs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 text-center " data-aos="flip-right" data-aos-duration="1000">
+                <div class="context-box p-2 rounded-2 mb-2" style="min-height: 260px;">
+                    <div class="mb-3 ">
+                        <img src="{% static 'media/logo.jpeg' %}" class="rounded-pill" alt="info1" width="50" height="50">
+
+                    </div>
+                    <div class="p-2">
+                        <h5 style="font-weight: 900;">Efficiency & Revenue</h5>
+                        <p style="font-size: smaller;">Dentists may miss out on enumerating all potential
+                            issues,
+                            impacting patient care. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1000">
+                <img src="https://dummyimage.com/600x260/000/fff" style="width: 100%; min-height: 260px;"
+                    alt="">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-lg-6 slide-fwd-center" data-aos="fade-up" data-aos-delay="50"
+                data-aos-duration="1000">
+                <div class="d-flex context-box p-3 rounded-2">
+                    <div class="me-2">
+                        <img src="{% static 'media/logo.jpeg' %}" class="rounded-pill" alt="info1" width="100" height="100">
+                    </div>
+                    <div class="pt-3">
+                        <h4 style="font-weight: 900;">Al-Powered Diagnostics</h4>
+                        <p>BackupDoc.ai analyzes dental radiographs, highlighting areas needing attention.</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="d-flex context-box p-3 rounded-2" data-aos="fade-up" data-aos-delay="50"
+                    data-aos-duration="1000">
+                    <div class="me-2">
+                        <img src="{% static 'media/logo.jpeg' %}" class="rounded-pill" alt="info1" width="100" height="100">
+                    </div>
+                    <div class="pt-3">
+                        <h4 style="font-weight: 900;">Visual Education Tool</h4>
+                        <p>Converts technical radiograph data into OBJECTIVE & easy-to-understand visuals for
+                            patients.</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-6 mt-4 m-auto">
+                <div class="d-flex context-box p-3 rounded-2" data-aos="fade-up" data-aos-delay="150"
+                    data-aos-duration="1000">
+                    <div class="me-2">
+                        <img src="{% static 'media/logo.jpeg' %}" class="rounded-pill" alt="info1" width="100" height="100">
+                    </div>
+                    <div class="pt-2">
+                        <h4 style="font-weight: 900;">Efficiency & Revenue Growth</h4>
+                        <p>Enables dentists to identify and communicate potential issues more effectively,
+                            leading
+                            to better patient care and increased treatment acceptance.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row mt-5 text-center">
+            <div class="col-lg-6 mb-2 col-md-6">
+                <div class="context-box w-100 h-100 p-3">
+                    <div class="row mb-2">
+                        <div class="col-lg-3">
+                            <img src="./media/Border.png" alt="">
+                        </div>
+                        <div class="col-lg-9 ml-2">
+                            <p class="fs-4">Easy to Understand Report</p>
+                        </div>
+                    </div>
+                    <p class="fs-i mt-4" style="font-family: sans-serif;">
+
+                        No medical jargon! Receive a clear, color-coded visual report that's easy to interpret.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-6 mb-2 col-md-6">
+
+                <img src="{% static 'media/Xray.webp' %}" alt="backupdocxray">
+
+            </div>
+        </div>
+        <div class="container pt-4 pb-3">
+            <div class="text-center cus-f mt-5 mb-5">
+
+                <h1 class="text-light">About Us</h1>
+                <div class="under-line"></div>
+            </div>
+
+            <div class="context-box p-3">
+                <p class="fs-i mt-4" style="font-family: sans-serif;">
+
+                    Founded in 2023, BackupDoc is a pioneer in digital dental diagnostics. With a mission to
+                    democratize
+                    health diagnoses and enhance transparency, our platform has already served thousands of
+                    satisfied
+                    users, making dental diagnostics accessible and comprehensible for all. Join us on our
+                    journey
+                    to
+                    reshape the future of dental care, one radiograph at a time.
+                </p>
+                <div class="mt-4 mb-3">
+                    <a class="btn btn-light">About Inventor</a>
+                </div>
+            </div>
+        </div>
+        <div class="container pt-4 pb-3">
+            <div class="text-center cus-f mt-5 mb-5">
+                <div class="rounded-pill bg-dark p-3" style="display: inline-block;">
+                    <img src="{% static 'media/Frame.png' %}" alt="backupdoctest" width="50" height="50">
+                </div>
+                <h1 class="text-light">Testimolish</h1>
+                <div class="under-line"></div>
+            </div>
+            <div class="em-video">
+                <iframe style="width: 100%;" height="500" src="https://www.youtube.com/embed/VVmVD2rJRGM"
+                    title="Revolutionizing Dental Diagnostics with BackupDoc: AI-Powered Precision @DoctorShankerMDS"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="em-video mt-4">
+                <iframe style="width: 100%;" height="500" src="https://www.youtube.com/embed/_rgUQS04ztg"
+                    title="Oral Maxillofacial Surgeon Shares His Experience with BackupDoc - Revolutionizing Dental Diagnostics"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+        </div>
+</section>
+
+{% endblock content %}
+{% block footer %}
+<footer class="row py-5 my-5 ps-5 border-top container-fluid">
+    <div class="col-lg-3 mb-3">
+        <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+            <img src="./media/logo.png" alt="">
+        </a>
+        <p class="text-light">© 2023 by BackupDoc.</p>
+        <p class="text-light">All Right Reserved <a href="">Privacy and terms</a></p>
+    </div>
+    <div class="col-lg-3 mb-3">
+        <h5 class="text-light" style="font-weight: 900;">AI Based treatment prediction platform</h5>
+        <p class="text-light " style="font-family: sans-serif; font-size: small;">
+
+            Address
+            Backupdoc
+            Af 30 Aditya City center
+            ghaziabad
+        </p>
+    </div>
+
+    <div class="col-lg-4 mb-3">
+        <h5 class="text-light" style="font-weight: 900;">Be in the know</h5>
+        <p class="text-light " style="font-family: sans-serif; font-size: small;">
+
+            Founded in 2023, BackupDoc is a pioneer in digital dental diagnostics. With a mission to democratize
+            health diagnoses and enhance transparency, our platform has already served thousands of satisfied
+            users, making dental diagnostics accessible and comprehensible for all. Join us on our journey to
+            reshape the future of dental care, one radiograph at a time.
+        </p>
+    </div>
+
+
+    <div class="col-lg-1 mb-3">
+        <h5 class="text-light" style="font-weight: 900;">Menu</h5>
+        <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Features</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Pricing</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">FAQs</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">About</a></li>
+        </ul>
+    </div>
+</footer>
+{% endblock footer %}
+
+{% block scripts %}
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="{% static 'js/cam-slider.js' %}"></script>
+<script src="{% static 'js/worker.js' %}"></script>
+{% endblock scripts %}
+
+{% block aos %}
+AOS.init({
+    offset: 120,
+});
+{% endblock aos %}
